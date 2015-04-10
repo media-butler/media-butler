@@ -9,15 +9,13 @@
 	<h3>No cast info found.</h3>
 </md-card-content>
 <md-list ng-show="cast.cast" class="scrollMe">
-	<md-list-item class="md-3-line" ng-repeat="person in cast.cast">
-		<img ng-src="http://image.tmdb.org/t/p/w185{{person.profile_path}}" class="face" alt="{{person.name}}" />
-		<div class="md-list-item-text">
-			<h3>{{person.character}}</h3>
-			<h4>{{person.name}}</h4>
-			<p></p>
-		</div>
-		<md-divider md-inset ng-if="!$last"></md-divider>
-	</md-list-item>
+	<md-list-item class="md-2-line" ng-repeat="person in cast.cast">
+      <img ng-src="http://image.tmdb.org/t/p/w185{{person.profile_path}}" class="md-avatar" alt="{{person.name}}" />
+        <div class="md-list-item-text">
+          <h3>{{person.character}}</h3>
+          <p>{{person.name}}</p>
+        </div>
+      </md-list-item>
 </md-list>
 <md-card-content class="footer">
 	Cast provided by: <a href="http://www.themoviedb.org/">The Movie Database</a>.

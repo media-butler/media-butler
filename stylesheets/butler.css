@@ -76,11 +76,10 @@ a:hover {
 	text-decoration: underline;
 }
 
-.face{
-	/*width: 55px;
-	float: left;
-	margin: ;*/
-    border: 1px solid #ddd;
-    width: 48px;
-    margin: 16px;
+.md-avatar, .face {
+  /*border-radius: 30px;*/
+  border: 1px solid #ddd;
+  width: 40px;
+  margin: 0 20px; 
+  float: left;
 }
