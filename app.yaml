@@ -1,0 +1,34 @@
+application: media-butler
+version: 1
+runtime: php55
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /stylesheets
+  static_dir: stylesheets
+
+- url: /img
+  static_dir: img
+
+- url: /scripts
+  static_dir: scripts
+  
+- url: /widgets
+  static_dir: widgets
+
+- url: /traktCallback\.php
+  script: traktCallback.php
+  
+- url: /trakt\.php
+  script: trakt.php
+
+- url: /tunefind\.php
+  script: tunefind.php
+
+- url: /
+  script: index.html

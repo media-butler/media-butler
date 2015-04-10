@@ -1,0 +1,11 @@
+<md-toolbar>
+	<p class="md-toolbar-tools">Rating</p>
+</md-toolbar>
+<md-card-content ng-show="trakt.watching.movie">
+	<h1>{{trakt.watching.movie.rating | number:1}}</h1>
+	<p>Voted on by {{trakt.watching.movie.votes}} users</p>
+</md-card-content>
+<md-card-content ng-show="trakt.watching.episode">
+	<h1>{{trakt.watching.episode.rating | number:1}}</h1>
+	<p>Voted on by {{trakt.watching.episode.votes}} users</p>
+</md-card-content>

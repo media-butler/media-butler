@@ -1,0 +1,37 @@
+<md-toolbar>
+	<h2 class="md-toolbar-tools">Rotten Tomatoes</h2>
+</md-toolbar>
+<md-card-content ng-show="rottentomatoes.loading">
+	<h3>Ratings are being loaded..</h3>
+	<md-progress-circular md-mode="indeterminate"></md-progress-circular>
+</md-card-content>
+<md-card-content ng-show="!rottentomatoes.loading && !rottentomatoes.songs.length">
+	<h3>No ratings available.</h3>
+</md-card-content>
+<md-list>
+	<!-- Critic rating -->
+	<md-item class="md-3-line">
+		<!-- Rotten or Fresh logo -->
+		<img ng-src="" alt="{{rottentomatoes.ratings.critics_rating}}" />
+		<!-- Rating info -->
+		<div class="md-list-item-text">
+			<h3>Critic rating:{{rottentomatoes.ratings.critics_score}}</h3>
+			<h4>{{rottentomatoes.ratings.critics_rating}}</h4>
+			<p>{{rottentomatoes.critics_consensus}}</p>
+		</div>
+
+	</md-item>
+	<!-- Audience rating -->
+	<md-item class="md-3-line">
+		<!-- Rotten or Fresh logo -->
+		<img ng-src="" alt="{{rottentomatoes.ratings.critics_rating}}" />
+		<!-- Rating info -->
+		<div class="md-list-item-text">
+			<h3>Audience rating:{{rottentomatoes.ratings.audience_score}}</h3>
+			<h4>{{rottentomatoes.ratings.audience_rating}}</h4>
+		</div>
+	</md-item>
+</md-list>
+<md-card-content class="footer">
+	Ratings provided by: <a href="http://www.rottentomatoes.com/">Rotten Tomatoes</a>.
+</md-card-content>

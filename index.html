@@ -1,0 +1,72 @@
+<!doctype html>
+<html ng-app="butler">
+
+    <head>
+		<title>Media Butler</title>
+		
+        <!-- STYLE -->
+        <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.8.2/angular-material.min.css">
+		<link rel="stylesheet" href="https://rawgit.com/ducksboard/gridster.js/master/dist/jquery.gridster.min.css">
+        <link rel="stylesheet" href="stylesheets/butler.css">
+		
+		<!-- JAVASCRIPT -->
+		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script src="https://rawgit.com/ducksboard/gridster.js/master/dist/jquery.gridster.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-animate.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-aria.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.js"></script>
+        <script src="scripts/trakt.js"></script>
+        <script src="scripts/tunefind.js"></script>
+		<script src="scripts/rottentomatoes.js"></script>
+		<script src="scripts/themoviedb.js"></script>
+		<script src="scripts/butler.js"></script>
+    </head>
+
+    <body ng-controller="body">
+        <section ng-controller="login" layout="col" layout-align="center center" class="fullheight" ng-hide="trakt.watching">
+        	<md-card class="md-whiteframe-z3 welcome-message">
+        		<section class="welcome">
+	        		<img ng-src="img/logomb.png">
+	        		<h1>Welcome<span ng-show="trakt.authorised"> {{trakt.user.username}}</span>!</h1>
+	        		<p ng-hide="trakt.authorised">Media Butler allows Trakt users to view relevant movie and show information while they're watching!</p>
+	        		<p ng-show="trakt.authorised">Now you're logged in, fire up a <a href="http://trakt.tv/downloads" target="_blank">player</a> that's connected with Trakt to get served!</p>
+	        	
+		            <md-button class="md-raised md-primary" ng-hide="trakt.authorised" ng-click="trakt.login()">Log in with Trakt</md-button>
+		            <p ng-show="trakt.authorised"><md-button class="md-raised" ng-click="trakt.logout()">Log out</md-button></p>
+	            </section>
+        	</md-card>
+        </section>
+		<md-content ng-show="trakt.watching">
+			<header>
+				<img ng-src="http://weirdwater.net/mb/logomb.png" class="logo-small">
+			</header>	
+			<md-toolbar>
+				<div id="progress-bar" style="width:{{trakt.watching.progress}}%"></div>
+					<h2 class="md-toolbar-tools" id="header-toolbar">
+						<span ng-show="trakt.watching.type=='movie'">
+							{{trakt.watching.movie.title}} ({{trakt.watching.movie.year}})
+						</span>
+						<span ng-show="trakt.watching.type=='episode'">
+							{{trakt.watching.show.title}} 
+							{{trakt.watching.episode.season}}x{{trakt.watching.episode.number}} 
+							- {{trakt.watching.episode.title}}
+						</span>
+						<!--span class="toRight"><md-button class="md-raised" ng-click="trakt.logout()">Log out</md-button></span-->
+					</h2>
+			</md-toolbar>
+			
+            <div class="gridster">
+				<div id="widgets">
+					<div class="widget" data-row="1" data-col="1" data-sizex="1" data-sizey="4"><md-card mb-trakt-cover></md-card></div>
+					<div class="widget" data-row="3" data-col="2" data-sizex="2" data-sizey="4"><md-card mb-tunefind></md-card></div>
+					<div class="widget" data-row="1" data-col="2" data-sizex="2" data-sizey="2"><md-card mb-trakt-overview></md-card></div>
+					<div class="widget" data-row="3" data-col="4" data-sizex="2" data-sizey="6"><md-card mb-themoviedb-cast></md-card></div>
+					<div class="widget" data-row="5" data-col="1" data-sizex="1" data-sizey="2"><md-card mb-trakt-rating></md-card></div>
+				</div>
+            </div>
+
+		</md-content>
+    </body>
+
+</html>

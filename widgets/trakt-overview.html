@@ -1,0 +1,9 @@
+<md-toolbar>
+	<h2 class="md-toolbar-tools">Synopsis</h2>
+</md-toolbar>
+<md-card-content ng-show="trakt.watching.movie" class="scrollMe">
+	{{trakt.watching.movie.overview}}
+</md-card-content>
+<md-card-content ng-show="trakt.watching.episode" class="scrollMe">
+	{{trakt.watching.episode.overview}}
+</md-card-content>

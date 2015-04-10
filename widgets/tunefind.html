@@ -1,0 +1,25 @@
+<md-toolbar>
+	<h2 class="md-toolbar-tools">Music</h2>
+</md-toolbar>
+<md-card-content ng-show="tunefind.loading">
+	Song data  is loading..
+</md-card-content>
+<md-card-content ng-show="!tunefind.loading && !tunefind.songs.length">
+	No song data available.
+</md-card-content>
+<md-list ng-show="tunefind.songs.length" class="scrollMe">
+	<md-item ng-repeat="song in tunefind.songs">
+		<md-item-content>
+			<div class="md-tile-content">
+				<h4>
+					<span class="floatRight" ng-show="song.spotify"><a href="{{song.spotify.uri}}" title="Open '{{song.spotify.name}}' from '{{song.spotify.artists[0].name}}' in Spotify">Open in Spotify</a></span>
+					{{song.artist.name}} - <i>{{song.name}}</i>
+				</h4>
+				<p ng-show="song.scene">{{song.scene}}</p>
+			</div>
+		</md-item-content>
+	</md-item>
+</md-list>
+<md-card-content class="footer">
+	Source: <a href="http://www.tunefind.com/">TuneFind.com</a>. Song data used under license from TuneFind LLC.
+</md-card-content>
