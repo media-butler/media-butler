@@ -23,7 +23,7 @@ angular.module("tunefind", []).directive('mbTunefind', function(){
 					if(data === null || typeof data !== 'object') $scope.tunefind = {error: data};
 					else{
 						$scope.tunefind = data;
-						// https://api.spotify.com/v1/search?q=artist:%22AC/DC%22%20title:%22Shoot%20to%20Thrill%22&type=track
+						
 						$.each($scope.tunefind.songs, function(i){
 							var song = this;
 							$http({
