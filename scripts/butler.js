@@ -9,9 +9,11 @@
 var butler = angular.module('butler', ['ngMaterial', 'trakt', 'tunefind', 'rottentomatoes', 'themoviedb']);
 
 butler.config(function($mdThemingProvider) {
-  $mdThemingProvider.theme('light-blue')
-    .primaryPalette('pink')
-    .accentPalette('orange');
+	$mdThemingProvider.theme('light-blue')
+		.primaryPalette('pink')
+		.accentPalette('orange');
+	
+	$compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|spotify):/);
 });
 
 butler.controller('body', ['$scope', 'TraktClient', function($scope, TraktClient) {
