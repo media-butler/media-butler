@@ -40,6 +40,7 @@
 		<md-content ng-show="trakt.watching">
 			<header>
 				<img ng-src="http://weirdwater.net/mb/logomb.png" class="logo-small">
+				<div class="user-control">Hi, {{trakt.user.username}}! <md-button class="md-flat" ng-click="trakt.logout()">Log out</md-button></div>
 			</header>	
 			<md-toolbar>
 				<div id="progress-bar" style="width:{{trakt.watching.progress}}%"></div>

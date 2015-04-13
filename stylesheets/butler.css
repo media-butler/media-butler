@@ -55,6 +55,10 @@ html, body, .fullheight{
 
 .logo-small {
 	width: 200px;
+	display: block;
+	margin: 0 auto;
+	position: relative;
+	top: 10px;
 }
 
 header {
@@ -113,4 +117,11 @@ a:hover {
 .cast-list-text h3, .cast-list-text p {
 	padding: 0;
 	margin: 0;
+}
+
+.user-control {
+	position: relative;
+	float: right;
+	right: 5px;
+	top: -20px;
 }
