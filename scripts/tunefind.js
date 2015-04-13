@@ -10,12 +10,24 @@ angular.module("tunefind", []).directive('mbTunefind', function(){
 				
 				if(watching.type == "episode"){
 					var promise = $http({
-						url: 'tunefind.php?type=episode&show='+encodeURIComponent(watching.show.title)+'&year='+watching.show.year+'&season='+watching.episode.season+'&episode='+watching.episode.number
+						url: 'tunefind.php',
+						params: {
+							type: 'episode',
+							show: watching.show.title,
+							year: watching.show.year,
+							season: watching.episode.season,
+							episode: watching.episode.number
+						}
 					});
 				}
 				else{
 					var promise = $http({
-						url: 'tunefind.php?type=movie&movie='+encodeURIComponent(watching.movie.title)+'&year='+watching.movie.year
+						url: 'tunefind.php',
+						params: {
+							type: 'movie',
+							movie: watching.movie.title,
+							year: watching.movie.year
+						}
 					});
 				}
 				promise.success(function(data){
@@ -39,7 +51,7 @@ angular.module("tunefind", []).directive('mbTunefind', function(){
 						});
 					}
 				}).error(function(data){
-					$scope.tunefind = {error: data}
+					$scope.tunefind = {error: data};
 				});
 			});
         }
