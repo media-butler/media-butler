@@ -83,3 +83,34 @@ a:hover {
   margin: 0 20px; 
   float: left;
 }
+
+.md-2-line {
+	margin: 1px 0;
+}
+
+.cast-list {
+
+}
+
+.cast-list-item {
+	
+}
+
+.cast-profile {
+	width: 40px;
+	margin: 10px 20px;
+	display: inline-block;
+}
+
+.cast-list-text {
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+	position: relative;
+	top: -20px;
+}
+
+.cast-list-text h3, .cast-list-text p {
+	padding: 0;
+	margin: 0;
+}
