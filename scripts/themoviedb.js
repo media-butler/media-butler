@@ -5,18 +5,15 @@ angular.module("themoviedb", []).directive('mbThemoviedbCast', function(){
 			
 			document.addEventListener('watchingChange', function(){
 				
-				// GET INFO FROM ROTTEN TOMATOES WITH $http AND PUT THEM IN $scope.rottentomatoes
 				$scope.cast = {loading: true};
-				console.log($scope);
 				var watching = $scope.trakt.watching;
 				var tmdbKey = 'dd6ed86bdb03617ceff53e847e651298';
 				
 				var imdb = watching.type == "episode" ? watching.episode.ids.imdb : watching.movie.ids.imdb;
 				
-				var promise = $http({
+				$http({
 					url: 'http://api.themoviedb.org/3/find/'+ imdb +'?external_source=imdb_id&api_key='+ tmdbKey
-				});
-				promise.success(function(data){
+				}).success(function(data){
 					console.log(data);
 					if(watching.type == 'movie') {
 						if(!data.movie_results.length){
@@ -42,8 +39,7 @@ angular.module("themoviedb", []).directive('mbThemoviedbCast', function(){
 					}).error(function(data){
 						$scope.cast = {error: data};
 					});
-				})
-				.error(function(data){
+				}).error(function(data){
 					$scope.cast = {error: data};
 				});
 				
