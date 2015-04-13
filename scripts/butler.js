@@ -8,7 +8,7 @@
 
 var butler = angular.module('butler', ['ngMaterial', 'trakt', 'tunefind', 'rottentomatoes', 'themoviedb']);
 
-butler.config(function($mdThemingProvider) {
+butler.config(function($mdThemingProvider, $compileProvider) {
 	$mdThemingProvider.theme('light-blue')
 		.primaryPalette('pink')
 		.accentPalette('orange');
