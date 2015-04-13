@@ -9,11 +9,11 @@
 	<h3>No cast info found.</h3>
 </md-card-content>
 <md-list ng-show="cast.cast" class="scrollMe">
-	<md-list-item class="md-2-line" ng-repeat="person in cast.cast">
+	<md-list-item class="md-2-line" ng-repeat="person in cast.people">
       <img ng-src="http://image.tmdb.org/t/p/w185{{person.profile_path}}" class="md-avatar" alt="{{person.name}}" />
         <div class="md-list-item-text">
           <h3>{{person.character}}</h3>
-          <p>{{person.name}}</p>
+          <p><a href="http://www.imdb.com/name/{{person.imdb}}" target="_blank" ng-show="person.imdb">{{person.name}}</a></p>
         </div>
       </md-list-item>
 </md-list>
