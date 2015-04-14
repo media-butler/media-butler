@@ -53,18 +53,22 @@ html, body, .fullheight{
 	max-width: 100%;
 }
 
-.logo-small {
-	width: 200px;
-	display: block;
-	margin: 0 auto;
-	position: relative;
-	top: 10px;
-}
-
 header {
 	text-align: center;
 	padding: 11px 0 10px;
 	background-color: #ffffff;
+}
+
+.logo-small {
+	width: 200px;
+	height:37px;
+}
+
+.user-control {
+	position: relative;
+	float: right;
+	right: 5px;
+	line-height: 28px;
 }
 
 body, .gridster {
@@ -117,11 +121,4 @@ a:hover {
 .cast-list-text h3, .cast-list-text p {
 	padding: 0;
 	margin: 0;
-}
-
-.user-control {
-	position: relative;
-	float: right;
-	right: 5px;
-	top: -20px;
 }
