@@ -15,22 +15,14 @@
 		<img ng-src="img/noprofile.jpg" ng-hide="person.profile_path" class="cast-profile" alt="{{person.name}}" />
 		<section class="cast-list-text">
 			<h3>{{person.character}}</h3>
-	    	<p><a href="http://www.imdb.com/name/{{person.imdb}}" target="_blank" ng-show="person.imdb">{{person.name}}</a><span ng-hide="person.imdb">{{person.name}}</span></p>
+	    	<p>
+				<a href="http://www.imdb.com/name/{{person.actor.imdb_id}}/" target="_blank" ng-show="person.actor.imdb_id">{{person.name}}</a>
+				<span ng-hide="person.actor.imdb_id">{{person.name}}</span>
+			</p>
 		</section>
 	</div>
 </div>
-<!--
-<md-list ng-show="cast.people" class="scrollMe">
-	<md-list-item class="md-2-line" ng-repeat="person in cast.people">
-      <img ng-show="person.profile_path" ng-src="http://image.tmdb.org/t/p/w185{{person.profile_path}}" class="md-avatar" alt="{{person.name}}" />
-      <img ng-hide="person.profile_path" ng-src="img/noprofile.jpg" class="md-avatar" alt="{{person.name}}" />
-        <div class="md-list-item-text">
-          <h3>{{person.character}}</h3>
-          <p><a href="http://www.imdb.com/name/{{person.imdb}}" target="_blank" ng-show="person.imdb">{{person.name}}</a></p>
-        </div>
-      </md-list-item>
-</md-list>
--->
+
 <md-card-content class="footer">
-	Cast provided by: <a href="http://www.themoviedb.org/">The Movie Database</a>.
+	Source: <a href="http://www.themoviedb.org/">The Movie Database</a>.
 </md-card-content>
