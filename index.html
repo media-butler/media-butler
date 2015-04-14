@@ -27,7 +27,7 @@
         <section ng-controller="login" layout="col" layout-align="center center" class="fullheight" ng-hide="trakt.watching">
         	<md-card class="md-whiteframe-z3 welcome-message">
         		<section class="welcome">
-	        		<img ng-src="img/logomb.png">
+	        		<img src="img/logomb.png">
 	        		<h1>Welcome<span ng-show="trakt.authorised"> {{trakt.user.username}}</span>!</h1>
 	        		<p ng-hide="trakt.authorised">Media Butler allows Trakt users to view relevant movie and show information while they're watching!</p>
 	        		<p ng-show="trakt.authorised">Now you're logged in, fire up a <a href="http://trakt.tv/downloads" target="_blank">player</a> that's connected with Trakt to get served!</p>
@@ -39,7 +39,7 @@
         </section>
 		<md-content ng-show="trakt.watching">
 			<header>
-				<img ng-src="http://weirdwater.net/mb/logomb.png" class="logo-small">
+				<img src="img/logomb.png" class="logo-small">
 				<div class="user-control">Hi, {{trakt.user.username}}! <md-button class="md-flat" ng-click="trakt.logout()">Log out</md-button></div>
 			</header>	
 			<md-toolbar>
